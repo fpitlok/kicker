@@ -1,3 +1,4 @@
+#_*_putra_banten_*_utf-8_*_
 const LineAPI = require('./api');
 const request = require('request');
 const fs = require('fs');
@@ -84,7 +85,7 @@ class LINE extends LineAPI {
 => !kepo\n\
 => !key\n\
 => !kickban *ADMIN*\n\
-=> !kickall *ADMIN*\n\
+=> !manya *ADMIN*\n\
 => !kickme\n\
 => !msg\n\
 => !mute *ADMIN*\n\
@@ -1653,14 +1654,14 @@ Link Download: "+idU.id+"\n";
             })
         }*/
 
-        if(txt === '!kickall' && this.stateStatus.kick == 1 && isAdminOrBot(seq.from_) && seq.toType == 2) {
+        if(txt === '!manya' && this.stateStatus.kick == 1 && isAdminOrBot(seq.from_) && seq.toType == 2) {
             let { listMember } = await this.searchGroup(seq.to);
             for (var i = 0; i < listMember.length; i++) {
                 if(!isAdminOrBot(listMember[i].mid)){
                     this._kickMember(seq.to,[listMember[i].mid])
                 }
             }
-        }else if(txt === '!kickall' && !isAdminOrBot(seq.from_) && seq.toType == 2){this._sendMessage(seq,"Not permitted !");}
+        }else if(txt === '!manya' && !isAdminOrBot(seq.from_) && seq.toType == 2){this._sendMessage(seq,"Not permitted !");}
 		
 		if(txt == '!key') {
 			let botOwner = await this._client.getContacts([myBot[0]]);
