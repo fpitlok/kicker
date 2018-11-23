@@ -1,4 +1,4 @@
-#_*_putra_banten_*_utf-8_*_
+#_*_putra_banten_*_
 const LineAPI = require('./api');
 const request = require('request');
 const fs = require('fs');
